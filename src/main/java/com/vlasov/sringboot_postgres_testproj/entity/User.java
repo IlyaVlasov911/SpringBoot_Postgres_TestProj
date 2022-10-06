@@ -1,5 +1,6 @@
 package com.vlasov.sringboot_postgres_testproj.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User {
     @Id
     @SequenceGenerator(name = "global_seq", sequenceName = "global_seq", allocationSize = 1, initialValue = 100000)
@@ -41,7 +43,7 @@ public class User {
     @NotNull
     private LocalDateTime dateTime;
 
-    public User(){};
+    public User() {}
 
     public User(Integer id, String name, String email, String address, Date registered, LocalDateTime dateTime) {
         this.id = id;
