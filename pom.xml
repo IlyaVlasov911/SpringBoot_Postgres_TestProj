@@ -11,8 +11,8 @@
     <groupId>com.vlasov</groupId>
     <artifactId>SringBoot_Postgres_TestProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SringBoot_Postgres_TestProj</name>
-    <description>SringBoot_Postgres_TestProj</description>
+    <name>SpringBoot_Postgres_TestProj</name>
+    <description>SpringBoot_Postgres_TestProj</description>
     <properties>
         <java.version>17</java.version>
     </properties>
