@@ -1,4 +1,4 @@
-package com.vlasov.sringboot_postgres_testproj.entity;
+package com.vlasov.springboot_postgres_testproj.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;

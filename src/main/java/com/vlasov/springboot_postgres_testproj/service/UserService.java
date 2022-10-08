@@ -1,7 +1,7 @@
-package com.vlasov.sringboot_postgres_testproj.service;
+package com.vlasov.springboot_postgres_testproj.service;
 
-import com.vlasov.sringboot_postgres_testproj.entity.User;
-import com.vlasov.sringboot_postgres_testproj.repository.UserRepository;
+import com.vlasov.springboot_postgres_testproj.entity.User;
+import com.vlasov.springboot_postgres_testproj.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

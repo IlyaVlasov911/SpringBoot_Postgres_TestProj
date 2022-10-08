@@ -1,7 +1,7 @@
-package com.vlasov.sringboot_postgres_testproj.controller;
+package com.vlasov.springboot_postgres_testproj.controller;
 
-import com.vlasov.sringboot_postgres_testproj.entity.User;
-import com.vlasov.sringboot_postgres_testproj.service.UserService;
+import com.vlasov.springboot_postgres_testproj.entity.User;
+import com.vlasov.springboot_postgres_testproj.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
