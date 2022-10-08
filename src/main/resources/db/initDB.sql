@@ -12,4 +12,3 @@ CREATE TABLE users
     registered       TIMESTAMP           DEFAULT now() NOT NULL,
     edited           TIMESTAMP                         NOT NULL
 );
-CREATE UNIQUE INDEX users_unique_email_idx ON users (email);
