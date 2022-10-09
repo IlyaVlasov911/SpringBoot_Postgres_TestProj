@@ -1,10 +1,10 @@
 package com.vlasov.springboot_postgres_testproj.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -24,8 +24,7 @@ public class User {
     @Size(min = 2, max = 128)
     private String name;
 
-    @Column(name = "email", nullable = false, unique = true)
-    @Email
+    @Column(name = "email", nullable = false)
     @NotBlank
     @Size(max = 128)
     private String email;
@@ -37,21 +36,23 @@ public class User {
 
     @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()", updatable = false)
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
     private Date registered = new Date();
 
     @Column(name = "edited", nullable = false)
     @NotNull
-    private LocalDateTime dateTime;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
+    private Date edited = new Date();
 
     public User() {}
 
-    public User(Integer id, String name, String email, String address, Date registered, LocalDateTime dateTime) {
+    public User(Integer id, String name, String email, String address, Date registered, Date edited) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.registered = registered;
-        this.dateTime = dateTime;
+        this.edited = edited;
     }
 
     public Integer getId() {
@@ -94,12 +95,12 @@ public class User {
         this.registered = registered;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public Date getEdited() {
+        return edited;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public void setEdited(Date edited) {
+        this.edited = edited;
     }
 
     @Override
@@ -110,7 +111,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", registered=" + registered +
-                ", dateTime=" + dateTime +
+                ", edited=" + edited +
                 '}';
     }
 }
